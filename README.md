@@ -3,8 +3,8 @@
 2. Maven 3.2.1 or higher.
 
 # Runtime assumptions
-1. The client is very basic & to speed up client side development & end-to-end testing , I have hardcoded a test user with the username "test" in various
-URI's & HTML/JS files. Therefore when you register a new user , please register a test user by the username "test" for any testing.
+1. The client is very basic & to speed up client side development & end-to-end testing , I have hardcoded a test user with the username "test" in various URI's & HTML/JS files. Therefore when you register a new user , please register a test user by the username "test" for any testing.
+2. The Client allows for user registration & logon. Once logged on , the UI allows the user to place an order. An order once matched becomes a trade. Any open orders on the book & trades can be viewed on the client as well. An order once filled is removed from the book.Any order partially filled goes back on the book with the remaining quantity.
 2. You will need 2 users to match 2 orders. The assumption here is that any orders leading to wash trades should not be allowed.Although the implementation
 does NOT do a "wash trade check" , it is supported in the design.
 3. The implementation supports matches for orders at same price or better price & supports matching for partial quantities as well.
