@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<title>WEB-OMS</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-md-6 text-right">
+				<p>Place an order</p>
+			</div>
+		</div>
+		<div class="row">
+			<form action="#" th:action="@{/placeOrder}" th:object="${orderentry}" method="post">
+				<p>Item:
+					<select class="form-control" id="item" th:field="*{item}">
+						<option th:value="A">A</option>
+						<option th:value="B">B</option>
+						<option th:value="C">C</option>
+						<option th:value="D">D</option>
+					</select>
+				</p>
+				<p>Quantity: <input type="text" th:field="*{quantity}" /></p>
+				<p>Price: <input type="text" th:field="*{price}" /></p>
+				<p>Side:
+					<select class="form-control" id="side" th:field="*{side}">
+						<option th:value="BUY">BUY</option>
+						<option th:value="SELL">SELL</option>
+					</select>
+				</p>
+				<p>Username: <input type="text" th:field="*{username}" /></p>
+				<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+			</form>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6 col-md-6 text-right">
+				<a th:href="@{/home}">Home</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

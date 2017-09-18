@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<title>WEB-OMS</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<input type='checkbox' id='form-switch'/>
+<form id='login-form' th:action="@{/loginUser}" th:object="${logonentry}">
+	<input type="text" th:field="*{username}" placeholder="Username" required="required"/>
+	<input type="password" th:field="*{password}" placeholder="Password" required="required"/>
+	<button type='submit'>Login</button>
+	<label for='form-switch'><span>Register</span></label>
+</form>
+<form id='register-form' th:action="@{/saveUser}" th:object="${userentry}" method="post" >
+	<input type="text"  th:field="*{username}" placeholder="Username" required="required"/>
+	<input type="password" th:field="*{password}" placeholder="Password" required="required"/>
+	<input type="text" th:field="*{companyName}" placeholder="Company Name" required="required"/>
+	<button type='submit'>Register</button>
+	<label for='form-switch'>Already Member ? Sign In Now..</label>
+</form>
+</body>
+</html>
